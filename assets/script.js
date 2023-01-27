@@ -1,11 +1,12 @@
 function Open() {
-    let menuArea = document.querySelector('.menu');
+  let lista = document.querySelector("ul");
+  let menu = document.querySelector(".menu");
 
-    if(menuArea.classList.contains('open') == true) {
-        menuArea.classList.remove('open')
-        document.querySelector('.menu-open img').src ='./assets/images/menu-buguer-open.svg'
-    } else {
-        menuArea.classList.add('open')
-        document.querySelector('.menu-open img').src ='./assets/images/menu-buguer-close.svg'
-    }
+  if (lista.style.display == "none") {
+    lista.style.display = "flex";
+    menu.src = "./assets/images/menu-buguer-close.svg";
+  } else {
+    lista.style.display = "none";
+    menu.src = "./assets/images/menu-buguer-open.svg";
+  }
 }

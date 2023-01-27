@@ -1,182 +1,153 @@
 * {
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  overflow: hidden;
 }
 body {
-    background-color: #000;
-    background-image: url(./images/blur-2.png), url(./images/blur-1.png);
-    background-repeat: no-repeat, no-repeat;  
-    background-position: top right, bottom left;
-    margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
+  background-image: url(./images/blur-2.png), url(./images/blur-1.png);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top right, bottom left;
 }
 header {
-    max-width: 1100px;
-    height: 70px;
-    padding-top: 20px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 10px;
 }
-.logo {
-    margin-left: 100px;
-    cursor: pointer;
+
+header ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  color: #fff;
 }
-.menu ul {
-    display: flex;
+
+header ul li {
+  cursor: pointer;
+  transition: all ease 0.3s;
+  font-size: 19px;
 }
-.menu ul li a {
-    color: #FFF;
-    list-style: none;
-    font-family: sans-serif;
-    font-size: 17px;
-    margin: 0px 20px;
-    text-decoration: none;
+
+header ul li:hover {
+  color: #8257e5;
+  border-bottom: 1px solid #8257e5;
 }
-.menu ul li a:hover {
-    color: #8257e5;
-    border-bottom: 1px solid #8257e5;
+
+header button {
+  border: 1px solid #8257e5;
+  padding: 15px 25px;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 12px;
+  transition: ease all 0.2s;
 }
-.btn-desk {
-    background-color: #2d204b;
-    width: 200px;
-    height: 50px;
-    color: #FFF;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-family: 'Manrope';
-    border: 2px solid #8257e5;
-    border-radius: 15px;
-    cursor: pointer;
+
+header button:hover {
+  border: 2px solid #fff;
 }
-.btn-desk:hover {
-    color: #8257e5;
-}
-#contents-white {
-    color: #FFF;
-    font-family: 'Manrope';
-    font-weight: 700;
-    text-align: center;
-    font-size: 67px;
-    margin: 0;
-    margin-top: 10px;
-}
-#contents-purple {
-    text-align: center;
-    -webkit-text-stroke: 1px #8257e5;
-    font-family: 'Arial';
-    font-weight: 700;
-    font-size: 67px;
-    margin: 0;
-}
+
 section {
-    display: flex;
-    justify-content: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
 }
 
-.logo-mobile, 
-.menu-open, 
-.contents-mobile,
-.btn-mobile {
+section h1 {
+  font-size: 70px;
+  color: #fff;
+  padding-bottom: 30px;
+}
+
+section h2 {
+  padding-bottom: 30px;
+  font-size: 70px;
+  color: rgba(0, 0, 0, 0.9);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #8257e5;
+}
+
+.logo-mobile,
+.menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .logo-desktop,
+  header button {
     display: none;
+  }
+
+  .logo-mobile,
+  .menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  body {
+    background-image: url("./images/blur-mobile.png");
+    background-position: center;
+    background-size: cover;
+  }
+
+  header {
+    width: 100%;
+    height: 80px;
+    padding: 25px;
+    padding-right: 40px;
+    padding-left: 40px;
+    justify-content: space-between;
+    background-color: black;
+    border-bottom: 1px solid #555;
+  }
+
+  header ul {
+    display: none;
+    height: 100%;
+    flex-direction: column;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    background-color: black;
+    width: 100vw;
+  }
+
+  header ul li {
+    border-bottom: 1px solid #555;
+    padding-bottom: 20px;
+    padding-left: 15px;
+  }
+  header ul li:first-of-type {
+    padding-top: 20px;
+  }
+  section h1,
+  section h2 {
+    font-size: 50px;
+  }
 }
 
-@media (max-width:600px) {
-    .logo,
-    .btn-desk {
-        display: none;
-    }
-    body {
-        background-image: url(./images/blur-mobile.png);
-        background-repeat: no-repeat;
-        background-position: bottom;
-        height: 100vh;
-        overflow: hidden;
-    }
-    header {
-        border-bottom: 1px solid #555;
-        padding-top: 10px;
-        height: 87px;
-    }
-    .logo-mobile {
-        display: block;
-        margin-left: 20px;
-    }
-    .menu-open {
-        display: block;
-        margin-left: 120px;
-    }
-    .menu-open img {
-        width: 35px;
-        height: auto;
-    }
-    .open {
-        display: flex !important;
-    }
-    .menu {
-        display: none;
-        position: absolute;
-        z-index: 99;
-        background-color: #000;
-        height: calc(100vh - 100px);
-        width: 100%;
-        top: 100px;
-        left: 0;
-    }
-    .menu ul {
-        display: flex;
-        flex-direction: column;
-        width: 100vh;
-        margin: 0;
-        padding: 0;
-    }
-    .menu ul li{
-        border-bottom: 1px solid #555;
-        padding-bottom: 20px;
-        padding-top: 20px;
-    }
-    .menu ul li a {
-        font-family: 'Manrope';
-        font-weight: 400;
-        font-size: 20px;
-    }
-    .contents-mobile {
-        display: block;
-        color: #FFF;
-        font-family: 'Manrope';
-        font-weight: 700;
-        font-size: 30px;
-        padding: 0 25px 0 25px;
-        text-align: center;
-        padding-top: 50px;
-    }
-    .btn-mobile {
-        display: flex;
-    }
-    .btn-mobile button {
-        background-color: #2d204b;
-        width: 200px;
-        height: 50px;
-        color: #FFF;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-family: 'Manrope';
-        border: 2px solid #8257e5;
-        border-radius: 15px;
-        cursor: pointer;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    #contents-white,
-    #contents-purple {
-        font-size: 40px;
-    }
-    section {
-        display: flex;
-        justify-content: center;
-    }
-    section img {
-        margin-top: 28px;
-        width: 350px;
-        height: auto;
-    }
+@media (max-width: 500px) {
+  section h1,
+  section h2 {
+    font-size: 35px;
+  }
+
+  aside img {
+    width: 750px;
+  }
 }
