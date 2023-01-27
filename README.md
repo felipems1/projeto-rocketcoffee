@@ -1,4 +1,4 @@
-<h1 align="center"> RocketCoffee </h1>
+<h1 align="center"> Rocket Coffee </h1>
 
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
